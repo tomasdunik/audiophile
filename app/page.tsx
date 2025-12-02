@@ -7,23 +7,35 @@ import imageEarphonesYX1Desktop from "../public/images/home/desktop/image-earpho
 import imageSpeakerZX9 from "../public/images/home/mobile/image-speaker-zx9.png";
 import imageSpeakerZX9Tablet from "../public/images/home/tablet/image-speaker-zx9.png";
 import imageSpeakerZX9Desktop from "../public/images/home/desktop/image-speaker-zx9.png";
+import imageHero from "../public/images/home/desktop/Bitmap.png";
 
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <section className="mb-10 bg-[url('../public/images/home/mobile/image-header.jpg')] bg-cover bg-center md:mb-24 lg:mb-[120px]">
-        <div className="flex flex-col items-center pt-[108px] pb-[112px] text-center">
-          <p className="text-white-50 pb-4 overline">New Product</p>
-          <h1 className="pb-6 text-white">XX99 Mark II Headphones</h1>
-          <p className="text-white-75 pb-7">
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <a href="" className="button-primary">
-            See Product
-          </a>
+      <section className="mb-10 bg-[url('../public/images/home/mobile/image-header.jpg')] bg-cover bg-[center_-83px] md:mb-24 md:bg-[url('../public/images/home/tablet/image-header.jpg')] md:bg-[center_-150px] md:bg-no-repeat lg:mb-[120px] lg:overflow-hidden lg:bg-[#121212] lg:bg-none lg:bg-center">
+        <div className="md:px-10 lg:mx-auto lg:flex lg:max-h-[632px] lg:max-w-[1190px] lg:items-center lg:gap-[45px]">
+          <div className="flex flex-col items-center px-6 pt-[108px] pb-[112px] text-center md:px-0 md:pt-[126px] md:pb-[167px] lg:z-1 lg:max-w-[398px] lg:items-start lg:text-left">
+            <p className="text-white-50 tracking-10 pb-4 text-sm leading-19 uppercase md:pb-6">
+              New Product
+            </p>
+            <h1 className="tracking-1-29 md:tracking-2 pb-6 text-[2.25rem] leading-40 font-bold text-white uppercase md:px-[185px] md:text-5xl md:leading-58 lg:px-0">
+              XX99 Mark II Headphones
+            </h1>
+            <p className="text-white-75 text-md pb-7 leading-25 font-medium md:px-[149px] md:pb-10 lg:max-w-[349px] lg:px-0">
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </p>
+            <Link href="#" className="button-primary--orange">
+              See Product
+            </Link>
+          </div>
+          <Image
+            src={imageHero}
+            alt="YX1 Earphones"
+            className="hidden lg:z-0 lg:block lg:translate-y-[30px]"
+          />
         </div>
       </section>
       <Category />
