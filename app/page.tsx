@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <section className="mb-10 bg-[url('../public/images/home/mobile/image-header.jpg')] bg-cover bg-center">
+      <section className="mb-10 bg-[url('../public/images/home/mobile/image-header.jpg')] bg-cover bg-center md:mb-24 lg:mb-[120px]">
         <div className="flex flex-col items-center pt-[108px] pb-[112px] text-center">
           <p className="text-white-50 pb-4 overline">New Product</p>
           <h1 className="pb-6 text-white">XX99 Mark II Headphones</h1>
@@ -28,12 +28,7 @@ export default function Home() {
       </section>
       <Category />
       <section className="px-6 pb-[120px] md:px-10 md:pb-24 lg:mx-auto lg:max-w-[1190px] lg:pb-[200px]">
-        <div className="bg-orange mb-6 rounded-lg bg-[url('../public/images/home/desktop/pattern-circles.svg')] bg-cover bg-[center_-119px] md:mb-8 md:bg-auto md:bg-[center_-285px] md:bg-no-repeat lg:mb-12 lg:flex lg:items-center lg:justify-center lg:gap-[138px] lg:overflow-hidden">
-          {/* <Image
-            className="mx-auto w-[172px] pt-[55px] pb-8 md:w-[197px] md:pb-16 lg:mx-0 lg:w-[410px] lg:translate-y-[80px] lg:pt-0"
-            src={imageSpeakerZX9}
-            alt="ZX9 Speaker"
-          /> */}
+        <div className="bg-orange mb-6 rounded-lg bg-[url('../public/images/home/desktop/pattern-circles.svg')] bg-cover bg-[center_-119px] md:mb-8 md:bg-auto md:bg-[center_-285px] md:bg-no-repeat lg:mb-12 lg:flex lg:items-center lg:justify-center lg:gap-[138px] lg:overflow-hidden lg:bg-[-170px_-50px]">
           <picture>
             <source
               media="(min-width: 1440px)"
@@ -64,7 +59,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mb-6 rounded-lg bg-[url('../public/images/home/mobile/image-speaker-zx7.jpg')] bg-cover bg-center md:mb-8 md:bg-[url('/images/home/tablet/image-speaker-zx7.jpg')] lg:mb-12 lg:bg-[url('/images/home/desktop/image-speaker-zx7.jpg')]">
-          <div className="px-[6] py-[101px] md:px-[62px] lg:px-[95px]">
+          <div className="px-6 py-[101px] md:px-[62px] lg:px-[95px]">
             <p className="tracking-2 pb-8 text-2xl leading-38 font-bold">
               ZX7 SPEAKER
             </p>
