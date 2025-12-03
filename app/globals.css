@@ -51,6 +51,12 @@
 }
 
 @layer base {
+  /* Oranžový hover pre navigačné odkazy */
+  nav ul li a,
+  footer a,
+  header svg {
+    @apply hover:text-orange cursor-pointer text-white transition-colors duration-150 ease-out;
+  }
   /* h1 {
     @apply md:tracking-2 tracking-1-29 text-[36px] leading-40 font-bold uppercase md:text-5xl md:leading-56;
   }
