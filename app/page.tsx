@@ -43,7 +43,7 @@ export default function Home() {
         <div className="bg-orange mb-6 rounded-lg bg-[url('../public/images/home/desktop/pattern-circles.svg')] bg-cover bg-[center_-119px] md:mb-8 md:bg-auto md:bg-[center_-285px] md:bg-no-repeat lg:mb-12 lg:flex lg:items-center lg:justify-center lg:gap-[138px] lg:overflow-hidden lg:bg-[-170px_-50px]">
           <picture>
             <source
-              media="(min-width: 1440px)"
+              media="(min-width: 1110px)"
               srcSet={imageSpeakerZX9Desktop.src}
             />
             <source
@@ -83,7 +83,7 @@ export default function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:gap-[11px] lg:gap-[30px]">
           <picture className="md:w-1/2">
             <source
-              media="(min-width: 1440px)"
+              media="(min-width: 1110px)"
               srcSet={imageEarphonesYX1Desktop.src}
             />
             <source
