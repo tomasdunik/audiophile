@@ -40,13 +40,13 @@ const page = () => {
   // data.json používa "./assets/..." -> u nás sú súbory v "/images/..."
   const img = (p: string) => p.replace("./assets", "/images");
   const products = (data as Product[]).filter(
-    (p) => p.category === "headphones",
+    (p) => p.category === "earphones",
   );
 
   return (
     <div>
       <p className="tracking-2 md:tracking-1-43 mb-16 bg-[#121212] py-8 text-center text-2xl leading-38 font-bold text-white uppercase md:mb-[120px] md:pt-[105px] md:pb-[97px] md:text-4xl md:leading-44 lg:mb-[160px] lg:pt-[98px]">
-        Headphones
+        Earphones
       </p>
       {products
         .slice()
