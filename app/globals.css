@@ -91,13 +91,13 @@
 
 @layer components {
   .button-primary--orange {
-    @apply bg-orange tracking-1 hover:bg-orange-light block w-fit cursor-pointer px-[30.5px] py-[15px] text-xs leading-18 font-bold text-white uppercase;
+    @apply bg-orange tracking-1 hover:bg-orange-light block w-fit cursor-pointer px-[30.5px] py-[15px] text-xs leading-18 font-bold text-white uppercase transition-colors duration-200 ease-out;
   }
   .button-primary--black {
-    @apply tracking-1 hover:bg-black-hover block w-fit cursor-pointer bg-black px-[30.5px] py-[15px] text-xs leading-18 font-bold text-white uppercase;
+    @apply tracking-1 hover:bg-black-hover block w-fit cursor-pointer bg-black px-[30.5px] py-[15px] text-xs leading-18 font-bold text-white uppercase transition-colors duration-200 ease-out;
   }
   .button-outline {
-    @apply tracking-1 block w-fit cursor-pointer border border-black bg-transparent px-[29.5px] py-[14px] text-xs leading-18 font-bold text-black uppercase hover:bg-black hover:text-white;
+    @apply tracking-1 block w-fit cursor-pointer border border-black bg-transparent px-[29.5px] py-[14px] text-xs leading-18 font-bold text-black uppercase transition-colors duration-200 ease-out hover:bg-black hover:text-white;
   }
   .button-text {
     @apply tracking-1 text-black-50 hover:text-orange block w-fit cursor-pointer text-xs leading-18 font-bold uppercase;
