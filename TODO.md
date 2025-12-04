@@ -20,3 +20,5 @@ Footer
   {
   "plugins": ["prettier-plugin-tailwindcss"]
   }
+
+- po kliknuti na obrazky nech sa otvori galerie a zobrazia napr vsetky fotky produktu
