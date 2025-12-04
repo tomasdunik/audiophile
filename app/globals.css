@@ -63,6 +63,19 @@
   header svg {
     @apply hover:text-orange cursor-pointer text-white transition-colors duration-150 ease-out;
   }
+  /* In the box tabuľka */
+
+  tr:last-child td {
+    @apply pb-0;
+  }
+
+  tr td:first-child {
+    @apply text-orange pr-6 font-bold lg:w-4;
+  }
+  tr td {
+    @apply text-md text-black-50 pb-2 leading-25 font-medium;
+  }
+
   /* h1 {
     @apply md:tracking-2 tracking-1-29 text-[36px] leading-40 font-bold uppercase md:text-5xl md:leading-56;
   }

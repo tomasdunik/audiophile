@@ -48,25 +48,60 @@ const page = () => {
             <button className="button-primary--orange">Add to Cart</button>
           </div>
         </div>
-        <p className="tracking-0-86 md:tracking-1-14 mb-6 text-xl leading-36 font-bold md:mb-8 md:text-3xl">
-          FEATURES
-        </p>
-        <p className="text-md text-black-50 leading-25 font-medium">
-          Featuring a genuine leather head strap and premium earcups, these
-          headphones deliver superior comfort for those who like to enjoy
-          endless listening. It includes intuitive controls designed for any
-          situation. Whether you’re taking a business call or just in your own
-          personal space, the auto on/off and pause features ensure that you’ll
-          never miss a beat.
-          <br />
-          <br />
-          The advanced Active Noise Cancellation with built-in equalizer allow
-          you to experience your audio world on your terms. It lets you enjoy
-          your audio in peace, but quickly interact with your surroundings when
-          you need to. Combined with Bluetooth 5. 0 compliant connectivity and
-          17 hour battery life, the XX99 Mark II headphones gives you superior
-          sound, cutting-edge technology, and a modern design aesthetic.
-        </p>
+        <div className="mb-[88px] flex flex-col gap-[88px] md:mb-[120px] md:gap-[120px] lg:mb-[160px] lg:flex-row lg:gap-[125px]">
+          <div>
+            <p className="tracking-0-86 md:tracking-1-14 mb-6 text-xl leading-36 font-bold uppercase md:mb-8 md:text-3xl">
+              Features
+            </p>
+            <p className="text-md text-black-50 leading-25 font-medium">
+              Featuring a genuine leather head strap and premium earcups, these
+              headphones deliver superior comfort for those who like to enjoy
+              endless listening. It includes intuitive controls designed for any
+              situation. Whether you’re taking a business call or just in your
+              own personal space, the auto on/off and pause features ensure that
+              you’ll never miss a beat.
+              <br />
+              <br />
+              The advanced Active Noise Cancellation with built-in equalizer
+              allow you to experience your audio world on your terms. It lets
+              you enjoy your audio in peace, but quickly interact with your
+              surroundings when you need to. Combined with Bluetooth 5. 0
+              compliant connectivity and 17 hour battery life, the XX99 Mark II
+              headphones gives you superior sound, cutting-edge technology, and
+              a modern design aesthetic.
+            </p>
+          </div>
+          <div className="md:flex md:gap-[11px] lg:flex-col lg:gap-0">
+            <p className="tracking-0-86 md:tracking-1-14 mb-6 text-xl leading-36 font-bold uppercase md:mb-0 md:min-w-[339px] md:text-3xl lg:mb-8">
+              In The Box
+            </p>
+            <table>
+              <caption className="sr-only">In The Box</caption>
+              <tbody>
+                <tr>
+                  <td>1x</td>
+                  <td>Headphone Unit</td>
+                </tr>
+                <tr>
+                  <td>2x</td>
+                  <td>Replacement Earcups</td>
+                </tr>
+                <tr>
+                  <td>1x</td>
+                  <td>User Manual</td>
+                </tr>
+                <tr>
+                  <td>1x</td>
+                  <td>3.5mm 5m Audio Cable</td>
+                </tr>
+                <tr>
+                  <td>1x</td>
+                  <td>Travel Bag</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>{" "}
       <Category />
       <About />

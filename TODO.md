@@ -22,3 +22,5 @@ Footer
   }
 
 - po kliknuti na obrazky nech sa otvori galerie a zobrazia napr vsetky fotky produktu
+
+- aby bola pristupna, focus, opravit kontrast, pridat vyhlasenie o pristupnosti, pridat cookies oznam, table pri produkce in the box nech cita dobre citacka
