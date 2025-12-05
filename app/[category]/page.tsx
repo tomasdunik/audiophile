@@ -68,7 +68,7 @@ export default async function Page({
               tablet: img(p.categoryImage.tablet),
               desktop: img(p.categoryImage.desktop),
             }}
-            href={`/product/${p.slug}`}
+            href={`/${p.category}/${p.slug}`} // link to nested dynamic route
             reverse={idx % 2 === 1}
           />
         ))}
