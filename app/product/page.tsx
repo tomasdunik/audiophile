@@ -15,6 +15,7 @@ import imageProductXX99MarkIIHeadphonesGallery3Tablet from "../../public/images/
 import imageProductXX99MarkIIHeadphonesGallery1Desktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
 import imageProductXX99MarkIIHeadphonesGallery2Desktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
 import imageProductXX99MarkIIHeadphonesGallery3Desktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
+import ProductLikeBox from "../../components/ProductLikeBox";
 
 const page = () => {
   return (
@@ -167,6 +168,7 @@ const page = () => {
           </picture>
         </div>
       </div>{" "}
+      <ProductLikeBox />
       <Category />
       <About />
     </>
