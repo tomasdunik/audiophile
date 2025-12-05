@@ -64,16 +64,17 @@
   header svg {
     @apply hover:text-orange cursor-pointer text-white transition-colors duration-150 ease-out;
   }
-  /* In the box tabuľka */
 
-  tr:last-child td {
+  /* In the box zoznam */
+
+  li:last-child {
     @apply pb-0;
   }
 
-  tr td:first-child {
+  li span {
     @apply text-orange pr-6 font-bold lg:w-4;
   }
-  tr td {
+  li {
     @apply text-md text-black-50 pb-2 leading-25 font-medium;
   }
 

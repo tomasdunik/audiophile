@@ -81,31 +81,13 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             <p className="tracking-0-86 md:tracking-1-14 mb-6 text-xl leading-36 font-bold uppercase md:mb-0 md:min-w-[339px] md:text-3xl lg:mb-8">
               In The Box
             </p>
-            <table>
-              <caption className="sr-only">In The Box</caption>
-              <tbody>
-                <tr>
-                  <td>{product.includes[0].quantity}x</td>
-                  <td>{product.includes[0].item}</td>
-                </tr>
-                <tr>
-                  <td>{product.includes[1].quantity}x</td>
-                  <td>{product.includes[1].item}</td>
-                </tr>
-                <tr>
-                  <td>{product.includes[2].quantity}x</td>
-                  <td>{product.includes[2].item}</td>
-                </tr>
-                <tr>
-                  <td>{product.includes[3].quantity}x</td>
-                  <td>{product.includes[3].item}</td>
-                </tr>
-                <tr>
-                  <td>{product.includes[4].quantity}x</td>
-                  <td>{product.includes[4].item}</td>
-                </tr>
-              </tbody>
-            </table>
+            <ul aria-label="In The Box">
+              {product.includes.map((inc, i) => (
+                <li key={i}>
+                  <span>{inc.quantity}x</span> {inc.item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="mb-[120px] flex flex-col gap-5 md:flex-row md:gap-[18px] lg:mb-[160px] lg:gap-[30px]">
