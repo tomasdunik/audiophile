@@ -54,7 +54,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </picture>
           <div className="md:flex md:flex-col">
             <p className="tracking-10 text-orange md:text-xxs md:tracking-8-57 mb-6 text-sm leading-19 uppercase md:mb-[17px] md:leading-16 lg:mb-[17px]">
-              NEW PRODUCT
+              {product.new && "New Product"}
             </p>
             <p className="tracking-1 md:tracking-1-43 lg:tracking-1-43 mb-6 text-2xl leading-38 font-bold uppercase md:mb-8 md:text-2xl md:leading-32 lg:text-4xl lg:leading-44">
               {product.name}
