@@ -85,7 +85,8 @@ const Header = () => {
       </section>
       {menuOpen && (
         <div className="lg:hidden">
-          <CategoryMenu />
+          {/*posle funkciu do komponentu CategoryMenu */}
+          <CategoryMenu onLinkClick={() => setMenuOpen(false)} />
         </div>
       )}
     </header>
