@@ -24,3 +24,7 @@ Footer
 - po kliknuti na obrazky nech sa otvori galerie a zobrazia napr vsetky fotky produktu
 
 - aby bola pristupna, focus, opravit kontrast, pridat vyhlasenie o pristupnosti, pridat cookies oznam, table pri produkce in the box nech cita dobre citacka
+
+## 404
+
+- stranka je moc mala na vysku a zmizne scrollbar a meni sa velkost sirky stranky. Mozno pridat undraw obrazok.
