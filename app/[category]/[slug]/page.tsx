@@ -1,22 +1,8 @@
 import Category from "../../../components/Category";
 import About from "../../../components/About";
 import ButtonGoBack from "../../../components/ButtonGoBack";
-import Link from "next/link";
 import Image from "next/image";
-import imageProductXX99MarkIIHeadphones from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
-import imageProductXX99MarkIIHeadphonesTablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
-import imageProductXX99MarkIIHeadphonesDesktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import imageProductXX99MarkIIHeadphonesGallery1 from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg";
-import imageProductXX99MarkIIHeadphonesGallery2 from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
-import imageProductXX99MarkIIHeadphonesGallery3 from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg";
-import imageProductXX99MarkIIHeadphonesGallery1Tablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg";
-import imageProductXX99MarkIIHeadphonesGallery2Tablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg";
-import imageProductXX99MarkIIHeadphonesGallery3Tablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg";
-import imageProductXX99MarkIIHeadphonesGallery1Desktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
-import imageProductXX99MarkIIHeadphonesGallery2Desktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
-import imageProductXX99MarkIIHeadphonesGallery3Desktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
 import ProductLikeBox from "../../../components/ProductLikeBox";
-
 import { notFound } from "next/navigation";
 import data from "../../../public/data.json";
 
@@ -30,26 +16,29 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound();
   }
 
+  // Pomocná funkcia na úpravu cesty obrázka
+  const img = (p: string) => p.replace("./assets", "/images");
+
   return (
     <>
       <ButtonGoBack />
       <div className="px-6 md:flex md:flex-col md:px-10 lg:mx-auto lg:max-w-[1190px]">
         <div className="mb-[88px] flex flex-col items-center md:mb-[120px] md:flex md:flex-row md:gap-[69px] lg:mb-40 lg:gap-[124px]">
           <picture>
-            {" "}
             <source
               media="(min-width: 1110px)"
-              srcSet={imageProductXX99MarkIIHeadphonesDesktop.src}
+              srcSet={img(product.image.desktop)}
             />
             <source
               media="(min-width: 768px)"
-              srcSet={imageProductXX99MarkIIHeadphonesTablet.src}
+              srcSet={img(product.image.tablet)}
             />
             <Image
               className="mb-8 rounded-lg md:mb-0 md:min-w-[281px] lg:min-w-[540px]"
-              src={imageProductXX99MarkIIHeadphones}
-              alt="XX99 Mark II Headphones"
-              sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+              src={img(product.image.mobile)}
+              alt={product.name}
+              width={540}
+              height={560}
             />
           </picture>
           <div className="md:flex md:flex-col">
@@ -93,55 +82,55 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <div className="mb-[120px] flex flex-col gap-5 md:flex-row md:gap-[18px] lg:mb-[160px] lg:gap-[30px]">
           <div className="flex flex-col gap-5 md:flex-[0.415] lg:flex-[0.413] lg:gap-8">
             <picture>
-              {" "}
               <source
                 media="(min-width: 1110px)"
-                srcSet={imageProductXX99MarkIIHeadphonesGallery1Desktop.src}
+                srcSet={img(product.gallery.first.desktop)}
               />
               <source
                 media="(min-width: 768px)"
-                srcSet={imageProductXX99MarkIIHeadphonesGallery1Tablet.src}
+                srcSet={img(product.gallery.first.tablet)}
               />
               <Image
                 className="w-full rounded-lg"
-                src={imageProductXX99MarkIIHeadphonesGallery1}
-                alt="XX99 Mark II Headphones"
-                sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+                src={img(product.gallery.first.mobile)}
+                alt={product.name}
+                width={500}
+                height={300}
               />
-            </picture>{" "}
+            </picture>
             <picture>
-              {" "}
               <source
                 media="(min-width: 1110px)"
-                srcSet={imageProductXX99MarkIIHeadphonesGallery2Desktop.src}
+                srcSet={img(product.gallery.second.desktop)}
               />
               <source
                 media="(min-width: 768px)"
-                srcSet={imageProductXX99MarkIIHeadphonesGallery2Tablet.src}
+                srcSet={img(product.gallery.second.tablet)}
               />
               <Image
                 className="w-full rounded-lg"
-                src={imageProductXX99MarkIIHeadphonesGallery2}
-                alt="XX99 Mark II Headphones"
-                sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+                src={img(product.gallery.second.mobile)}
+                alt={product.name}
+                width={500}
+                height={300}
               />
             </picture>
           </div>
           <picture className="g:flex-[0.587] md:flex-[0.585]">
-            {" "}
             <source
               media="(min-width: 1110px)"
-              srcSet={imageProductXX99MarkIIHeadphonesGallery3Desktop.src}
+              srcSet={img(product.gallery.third.desktop)}
             />
             <source
               media="(min-width: 768px)"
-              srcSet={imageProductXX99MarkIIHeadphonesGallery3Tablet.src}
+              srcSet={img(product.gallery.third.tablet)}
             />
             <Image
               className="h-full w-full rounded-lg object-cover"
-              src={imageProductXX99MarkIIHeadphonesGallery3}
-              alt="XX99 Mark II Headphones"
-              sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+              src={img(product.gallery.third.mobile)}
+              alt={product.name}
+              width={700}
+              height={600}
             />
           </picture>
         </div>
