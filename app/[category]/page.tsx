@@ -2,22 +2,17 @@ import ProductCard from "../../components/ProductCard";
 import Category from "../../components/Category";
 import About from "../../components/About";
 import data from "@/public/data.json";
+import { notFound } from "next/navigation";
+
+type CategoryParam = "earphones" | "headphones" | "speakers";
 
 type Product = {
   id: number;
   slug: string;
   name: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
-  category: "earphones" | "headphones" | "speakers";
-  categoryImage: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
+  image: { mobile: string; tablet: string; desktop: string };
+  category: CategoryParam;
+  categoryImage: { mobile: string; tablet: string; desktop: string };
   new: boolean;
   price: number;
   description: string;
@@ -32,21 +27,32 @@ type Product = {
     slug: string;
     name: string;
     image: { mobile: string; tablet: string; desktop: string };
-    category: "earphones" | "headphones" | "speakers";
+    category: CategoryParam;
   }>;
 };
 
-const page = () => {
-  // data.json používa "./assets/..." -> u nás sú súbory v "/images/..."
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category: raw } = await params;
+  const category = raw as CategoryParam;
+
+  if (!["earphones", "headphones", "speakers"].includes(category)) {
+    notFound();
+  }
+
+  // data.json uses "./assets/..." -> in our project files are in "/images/..."
   const img = (p: string) => p.replace("./assets", "/images");
-  const products = (data as Product[]).filter(
-    (p) => p.category === "earphones",
-  );
+  const products = (data as Product[]).filter((p) => p.category === category);
+
+  const heading = category.charAt(0).toUpperCase() + category.slice(1);
 
   return (
     <div>
       <p className="tracking-2 md:tracking-1-43 mb-16 bg-[#121212] py-8 text-center text-2xl leading-38 font-bold text-white uppercase md:mb-[120px] md:pt-[105px] md:pb-[97px] md:text-4xl md:leading-44 lg:mb-[160px] lg:pt-[98px]">
-        Earphones
+        {heading}
       </p>
       {products
         .slice()
@@ -62,7 +68,7 @@ const page = () => {
               tablet: img(p.categoryImage.tablet),
               desktop: img(p.categoryImage.desktop),
             }}
-            href={`/${p.category}/${p.slug}`}
+            href={`/product/${p.slug}`}
             reverse={idx % 2 === 1}
           />
         ))}
@@ -70,6 +76,4 @@ const page = () => {
       <About />
     </div>
   );
-};
-
-export default page;
+}
