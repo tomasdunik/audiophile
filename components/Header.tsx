@@ -1,14 +1,42 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import CategoryMenu from "./CategoryMenu";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="bg-[#121212] md:px-10">
-      <section className="mx-auto flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-10 py-8 md:px-0">
+    <header className="sticky top-0 z-50 bg-[#121212]">
+      <section className="mx-auto flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-10 py-8 md:px-0 md:px-10">
         <div className="flex items-center gap-[42px]">
-          <button className="flex flex-col gap-[3px] lg:hidden">
-            <div className="h-[3px] w-4 bg-white"></div>
-            <div className="h-[3px] w-4 bg-white"></div>
-            <div className="h-[3px] w-4 bg-white"></div>
+          <button
+            className="flex flex-col gap-[3px] lg:hidden"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {!menuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#fff"
+              >
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#fff"
+              >
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg>
+            )}
           </button>
           <Link href="/">
             <svg width="143" height="25" xmlns="http://www.w3.org/2000/svg">
@@ -44,6 +72,11 @@ const Header = () => {
           />
         </svg>
       </section>
+      {menuOpen && (
+        <div className="lg:hidden">
+          <CategoryMenu />
+        </div>
+      )}
     </header>
   );
 };

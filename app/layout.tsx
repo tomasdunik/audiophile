@@ -43,6 +43,7 @@ export default function RootLayout({
       </head>
       <body className={manrope.className}>
         <Header />
+        {console.log("layout render")}
         {children}
         <Footer />
       </body>
