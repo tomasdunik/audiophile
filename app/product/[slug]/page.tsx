@@ -23,12 +23,13 @@ import data from "../../../public/data.json";
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
 
-  // Kontrola, či slug existuje v data.json
-  const productExists = data.some((product) => product.slug === slug);
+  // Nájdi produkt podľa slug
+  const product = data.find((product) => product.slug === slug);
 
-  if (!productExists) {
+  if (!product) {
     notFound();
   }
+
   return (
     <>
       <ButtonGoBack />
@@ -56,15 +57,13 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               NEW PRODUCT
             </p>
             <p className="tracking-1 md:tracking-1-43 lg:tracking-1-43 mb-6 text-2xl leading-38 font-bold uppercase md:mb-8 md:text-2xl md:leading-32 lg:text-4xl lg:leading-44">
-              XX99 Mark II Headphones
+              {product.name}
             </p>
             <p className="text-md text-black-50 mb-6 leading-25 font-medium md:mb-8">
-              The new XX99 Mark II headphones is the pinnacle of pristine audio.
-              It redefines your premium headphone experience by reproducing the
-              balanced depth and precision of studio-quality sound.
+              {product.description}
             </p>
             <p className="tracking-1-29 mb-[31px] text-lg leading-25 font-bold lg:mb-[47px]">
-              $ 2,999
+              $ {product.price}
             </p>
             <button className="button-primary--orange">Add to Cart</button>
           </div>
@@ -74,22 +73,8 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             <p className="tracking-0-86 md:tracking-1-14 mb-6 text-xl leading-36 font-bold uppercase md:mb-8 md:text-3xl">
               Features
             </p>
-            <p className="text-md text-black-50 leading-25 font-medium">
-              Featuring a genuine leather head strap and premium earcups, these
-              headphones deliver superior comfort for those who like to enjoy
-              endless listening. It includes intuitive controls designed for any
-              situation. Whether you’re taking a business call or just in your
-              own personal space, the auto on/off and pause features ensure that
-              you’ll never miss a beat.
-              <br />
-              <br />
-              The advanced Active Noise Cancellation with built-in equalizer
-              allow you to experience your audio world on your terms. It lets
-              you enjoy your audio in peace, but quickly interact with your
-              surroundings when you need to. Combined with Bluetooth 5. 0
-              compliant connectivity and 17 hour battery life, the XX99 Mark II
-              headphones gives you superior sound, cutting-edge technology, and
-              a modern design aesthetic.
+            <p className="text-md text-black-50 leading-25 font-medium whitespace-pre-line">
+              {product.features}
             </p>
           </div>
           <div className="md:flex md:gap-[11px] lg:flex-col lg:gap-0">
@@ -100,24 +85,24 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               <caption className="sr-only">In The Box</caption>
               <tbody>
                 <tr>
-                  <td>1x</td>
-                  <td>Headphone Unit</td>
+                  <td>{product.includes[0].quantity}x</td>
+                  <td>{product.includes[0].item}</td>
                 </tr>
                 <tr>
-                  <td>2x</td>
-                  <td>Replacement Earcups</td>
+                  <td>{product.includes[1].quantity}x</td>
+                  <td>{product.includes[1].item}</td>
                 </tr>
                 <tr>
-                  <td>1x</td>
-                  <td>User Manual</td>
+                  <td>{product.includes[2].quantity}x</td>
+                  <td>{product.includes[2].item}</td>
                 </tr>
                 <tr>
-                  <td>1x</td>
-                  <td>3.5mm 5m Audio Cable</td>
+                  <td>{product.includes[3].quantity}x</td>
+                  <td>{product.includes[3].item}</td>
                 </tr>
                 <tr>
-                  <td>1x</td>
-                  <td>Travel Bag</td>
+                  <td>{product.includes[4].quantity}x</td>
+                  <td>{product.includes[4].item}</td>
                 </tr>
               </tbody>
             </table>

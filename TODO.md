@@ -28,3 +28,7 @@ Footer
 ## 404
 
 - stranka je moc mala na vysku a zmizne scrollbar a meni sa velkost sirky stranky. Mozno pridat undraw obrazok.
+
+## docs
+
+- css whitespace-pre-line a mozno pouzit v json \n

@@ -151,3 +151,7 @@ body.menu-open header {
   z-index: 50;
   pointer-events: auto;
 }
+
+.text-preline {
+  white-space: pre-line;
+}
