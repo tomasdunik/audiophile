@@ -42,7 +42,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col items-center gap-12 md:w-full md:flex-row md:justify-between md:gap-0">
             <p className="text-white-50 text-center">
-              Copyright 2021. All Rights Reserved
+              Copyright 2025. All Rights Reserved
             </p>
             <div className="flex items-center gap-4 lg:relative lg:-top-[85px]">
               <a href="https://facebook.com" target="_blank">
