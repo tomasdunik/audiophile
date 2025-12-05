@@ -1,23 +1,34 @@
-import Category from "../../components/Category";
-import About from "../../components/About";
-import ButtonGoBack from "../../components/ButtonGoBack";
+import Category from "../../../components/Category";
+import About from "../../../components/About";
+import ButtonGoBack from "../../../components/ButtonGoBack";
 import Link from "next/link";
 import Image from "next/image";
-import imageProductXX99MarkIIHeadphones from "../../public/images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
-import imageProductXX99MarkIIHeadphonesTablet from "../../public/images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
-import imageProductXX99MarkIIHeadphonesDesktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import imageProductXX99MarkIIHeadphonesGallery1 from "../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg";
-import imageProductXX99MarkIIHeadphonesGallery2 from "../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
-import imageProductXX99MarkIIHeadphonesGallery3 from "../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg";
-import imageProductXX99MarkIIHeadphonesGallery1Tablet from "../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg";
-import imageProductXX99MarkIIHeadphonesGallery2Tablet from "../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg";
-import imageProductXX99MarkIIHeadphonesGallery3Tablet from "../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg";
-import imageProductXX99MarkIIHeadphonesGallery1Desktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
-import imageProductXX99MarkIIHeadphonesGallery2Desktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
-import imageProductXX99MarkIIHeadphonesGallery3Desktop from "../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
-import ProductLikeBox from "../../components/ProductLikeBox";
+import imageProductXX99MarkIIHeadphones from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
+import imageProductXX99MarkIIHeadphonesTablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
+import imageProductXX99MarkIIHeadphonesDesktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+import imageProductXX99MarkIIHeadphonesGallery1 from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg";
+import imageProductXX99MarkIIHeadphonesGallery2 from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
+import imageProductXX99MarkIIHeadphonesGallery3 from "../../../public/images/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg";
+import imageProductXX99MarkIIHeadphonesGallery1Tablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg";
+import imageProductXX99MarkIIHeadphonesGallery2Tablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg";
+import imageProductXX99MarkIIHeadphonesGallery3Tablet from "../../../public/images/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg";
+import imageProductXX99MarkIIHeadphonesGallery1Desktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
+import imageProductXX99MarkIIHeadphonesGallery2Desktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
+import imageProductXX99MarkIIHeadphonesGallery3Desktop from "../../../public/images/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
+import ProductLikeBox from "../../../components/ProductLikeBox";
 
-const page = () => {
+import { notFound } from "next/navigation";
+import data from "../../../public/data.json";
+
+const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
+
+  // Kontrola, či slug existuje v data.json
+  const productExists = data.some((product) => product.slug === slug);
+
+  if (!productExists) {
+    notFound();
+  }
   return (
     <>
       <ButtonGoBack />
