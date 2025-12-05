@@ -27,7 +27,10 @@ export default function Home() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Link href="#" className="button-primary--orange">
+            <Link
+              href="/headphones/xx99-mark-two-headphones"
+              className="button-primary--orange"
+            >
               See Product
             </Link>
           </div>
@@ -65,7 +68,7 @@ export default function Home() {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Link className="button-primary--black" href="#">
+            <Link className="button-primary--black" href="speakers/zx9-speaker">
               See Product
             </Link>
           </div>
@@ -75,7 +78,7 @@ export default function Home() {
             <p className="tracking-2 pb-8 text-2xl leading-38 font-bold">
               ZX7 SPEAKER
             </p>
-            <Link className="button-outline" href="#">
+            <Link className="button-outline" href="speakers/zx7-speaker">
               See Product
             </Link>
           </div>
@@ -101,7 +104,7 @@ export default function Home() {
             <p className="tracking-2 pb-8 text-2xl leading-38 font-bold">
               YX1 EARPHONES
             </p>
-            <Link className="button-outline" href="#">
+            <Link className="button-outline" href="earphones/yx1-earphones">
               See Product
             </Link>
           </div>
