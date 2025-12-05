@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-[#121212]">
-      <section className="mx-auto flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-10 py-8 md:px-0 md:px-10">
+      <section className="flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-6 py-8 md:mx-auto md:px-10 lg:px-0">
         <div className="flex items-center gap-[42px]">
           <button
             className="flex flex-col gap-[3px] lg:hidden"
