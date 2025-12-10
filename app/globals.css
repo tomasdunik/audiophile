@@ -153,6 +153,7 @@ body.menu-open header {
   pointer-events: auto;
 }
 
+/* Používanie \n v JSON */
 .text-preline {
   white-space: pre-line;
 }

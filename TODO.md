@@ -1,7 +1,4 @@
-OK
-Header
-About
-Footer
+- pridat copyrigth automaticke generovanie roka
 
 - footer tá oranžová čiara sa v tablet a desktop musí posunúť
 

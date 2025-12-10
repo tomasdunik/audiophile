@@ -26,9 +26,22 @@ const CategoryMenu = ({ onLinkClick }: CategoryMenuProps) => (
           <p className="text-md tracking-1-07 lg:tracking-1-29 mb-[17px] pt-[88px] leading-20 font-bold uppercase lg:mb-[15px] lg:pt-[116px] lg:text-lg lg:leading-25">
             Headphones
           </p>
-          <p className="button-text group-hover:text-orange pb-[22px] lg:pb-[30px]">
-            Shop
-          </p>
+          <div className="button-text group-hover:text-orange flex items-center gap-[13px] pb-[22px] lg:pb-[30px]">
+            <p>Shop</p>
+            <svg
+              width="8"
+              height="12"
+              viewBox="0 0 8 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.707153 0.707092L5.70715 5.70709L0.707153 10.7071"
+                stroke="#D87D4A"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
         </Link>
       </li>
       <li className="md:flex-1">
@@ -46,9 +59,22 @@ const CategoryMenu = ({ onLinkClick }: CategoryMenuProps) => (
           <p className="text-md tracking-1-07 lg:tracking-1-29 mb-[17px] pt-[88px] leading-20 font-bold uppercase lg:mb-[15px] lg:pt-[116px] lg:text-lg lg:leading-25">
             Speakers
           </p>
-          <p className="button-text group-hover:text-orange pb-[22px] lg:pb-[30px]">
-            Shop
-          </p>
+          <div className="button-text group-hover:text-orange flex items-center gap-[13px] pb-[22px] lg:pb-[30px]">
+            <p>Shop</p>
+            <svg
+              width="8"
+              height="12"
+              viewBox="0 0 8 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.707153 0.707092L5.70715 5.70709L0.707153 10.7071"
+                stroke="#D87D4A"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
         </Link>
       </li>
       <li className="md:flex-1">
@@ -66,9 +92,22 @@ const CategoryMenu = ({ onLinkClick }: CategoryMenuProps) => (
           <p className="text-md tracking-1-07 lg:tracking-1-29 mb-[17px] pt-[88px] leading-20 font-bold uppercase lg:mb-[15px] lg:pt-[116px] lg:text-lg lg:leading-25">
             Earphones
           </p>
-          <p className="button-text group-hover:text-orange pb-[22px] lg:pb-[30px]">
-            Shop
-          </p>
+          <div className="button-text group-hover:text-orange flex items-center gap-[13px] pb-[22px] lg:pb-[30px]">
+            <p>Shop</p>
+            <svg
+              width="8"
+              height="12"
+              viewBox="0 0 8 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.707153 0.707092L5.70715 5.70709L0.707153 10.7071"
+                stroke="#D87D4A"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
         </Link>
       </li>
     </ul>
