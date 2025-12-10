@@ -9,7 +9,7 @@ type CategoryMenuProps = {
 };
 
 const CategoryMenu = ({ onLinkClick }: CategoryMenuProps) => (
-  <section className="absolute w-full rounded-b-lg bg-white px-6 pt-8 pb-9 md:px-0 md:px-10 md:pt-14 md:pb-[67px] lg:mx-auto lg:max-w-[1190px]">
+  <section className="absolute top-full left-0 max-h-[calc(100vh-100px)] w-full overflow-y-auto rounded-b-lg bg-white px-6 pt-8 pb-9 md:px-0 md:px-10 md:pt-14 md:pb-[67px] lg:mx-auto lg:max-w-[1190px]">
     <ul className="flex flex-col gap-4 md:flex-row md:gap-[10px] lg:gap-[30px]">
       <li className="md:flex-1">
         <Link
