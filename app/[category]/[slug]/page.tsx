@@ -6,8 +6,12 @@ import ProductLikeBox from "../../../components/ProductLikeBox";
 import { notFound } from "next/navigation";
 import data from "../../../public/data.json";
 
-const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
-  const { slug } = await params;
+const page = async ({
+  params,
+}: {
+  params: Promise<{ slug: string; category: string }>;
+}) => {
+  const { slug, category } = await params;
 
   // Nájdi produkt podľa slug
   const product = data.find((product) => product.slug === slug);
@@ -18,6 +22,12 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   // Pomocná funkcia na úpravu cesty obrázka
   const img = (p: string) => p.replace("./assets", "/images");
+
+  // Pridaj category do others
+  const othersWithCategory = product.others.map((other) => ({
+    ...other,
+    category: data.find((p) => p.slug === other.slug)?.category || category,
+  }));
 
   return (
     <>
@@ -135,7 +145,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </picture>
         </div>
       </div>{" "}
-      <ProductLikeBox />
+      <ProductLikeBox products={othersWithCategory} />
       <Category />
       <About />
     </>
