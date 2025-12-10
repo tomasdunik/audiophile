@@ -34,3 +34,7 @@ Footer
 - css whitespace-pre-line a mozno pouzit v json \n
 
 - pridat testz ak bz nahodou params alebo nieco nenacitalo
+
+---
+
+pridat prechod pri zobrazeni a zatvoreni mobilneho menu
