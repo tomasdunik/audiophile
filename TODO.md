@@ -35,3 +35,7 @@
 ---
 
 pridat prechod pri zobrazeni a zatvoreni mobilneho menu
+
+---
+
+- zmeny, ine logo kosika
