@@ -20,10 +20,21 @@ const Header = () => {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (basketOpen) {
+      document.body.classList.add("basket-open");
+    } else {
+      document.body.classList.remove("basket-open");
+    }
+    return () => {
+      document.body.classList.remove("basket-open");
+    };
+  }, [basketOpen]);
+
   return (
     <>
       <header className="relative sticky top-0 z-50 bg-[#121212]">
-        <section className="flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-6 py-8 md:mx-auto md:px-10 lg:px-0">
+        <section className="relative flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-6 py-8 md:mx-auto md:px-10 lg:px-0">
           <div className="flex items-center gap-[42px]">
             <button
               className="flex flex-col gap-[3px] lg:hidden"
@@ -92,7 +103,8 @@ const Header = () => {
             >
               <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
             </svg>
-          </button>
+          </button>{" "}
+          {basketOpen && <BasketPopUp />}
         </section>
         {menuOpen && (
           <div className="lg:hidden">
@@ -100,7 +112,6 @@ const Header = () => {
             <CategoryMenu onLinkClick={() => setMenuOpen(false)} />
           </div>
         )}
-        {basketOpen && <BasketPopUp />}
       </header>
     </>
   );

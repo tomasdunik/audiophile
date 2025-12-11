@@ -145,6 +145,15 @@ body.menu-open::before {
   pointer-events: none; /* let header still receive events */
 }
 
+body.basket-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--color-black-50); /* black 50% */
+  z-index: 40; /* overlay below header (header z-50) */
+  pointer-events: none; /* let header still receive events */
+}
+
 /* Keep header interactive */
 body.menu-open header {
   position: sticky; /* keep sticky */
