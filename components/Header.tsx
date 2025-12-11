@@ -38,7 +38,10 @@ const Header = () => {
           <div className="flex items-center gap-[42px]">
             <button
               className="flex flex-col gap-[3px] lg:hidden"
-              onClick={() => setMenuOpen((prev) => !prev)}
+              onClick={() => {
+                setMenuOpen((prev) => !prev);
+                setBasketOpen(false);
+              }}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {!menuOpen ? (
@@ -91,7 +94,10 @@ const Header = () => {
           </nav>
           <button
             className="flex flex-col gap-[3px]"
-            onClick={() => setBasketOpen((prev) => !prev)}
+            onClick={() => {
+              setBasketOpen((prev) => !prev);
+              setMenuOpen(false);
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
