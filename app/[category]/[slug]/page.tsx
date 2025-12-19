@@ -66,7 +66,14 @@ const page = async ({
               $ {product.price}
             </p>
             <div className="flex gap-4">
-              <QuantityAddToCart />
+              <QuantityAddToCart
+                item={{
+                  slug: product.slug,
+                  name: product.name,
+                  price: product.price,
+                  image: img(product.image.mobile),
+                }}
+              />
             </div>
           </div>
         </div>

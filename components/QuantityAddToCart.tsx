@@ -1,12 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { useCart } from "./CartContext";
 
-export default function QuantityAddToCart() {
+type Props = {
+  item: {
+    slug: string;
+    name: string;
+    price: number;
+    image: string;
+  };
+};
+
+export default function QuantityAddToCart({ item }: Props) {
+  const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
 
   const handleDecrease = () => setQuantity((q) => Math.max(1, q - 1));
   const handleIncrease = () => setQuantity((q) => Math.min(10, q + 1));
+
+  const handleAddToCart = () => {
+    addItem(item, quantity);
+  };
 
   return (
     <div className="flex gap-4">
@@ -28,7 +43,11 @@ export default function QuantityAddToCart() {
         </button>
       </div>
 
-      <button className="button-primary--orange" type="button">
+      <button
+        className="button-primary--orange"
+        type="button"
+        onClick={handleAddToCart}
+      >
         Add to Cart
       </button>
     </div>

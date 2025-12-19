@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { CartProvider } from "../components/CartContext";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -42,9 +43,11 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={manrope.className}>
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
