@@ -59,6 +59,10 @@
 }
 
 @layer base {
+  body {
+    @apply bg-grey-lighter;
+  }
+
   /* Oranžový hover pre navigačné odkazy */
   nav ul li a,
   footer a,
