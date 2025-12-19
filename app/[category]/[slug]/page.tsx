@@ -5,6 +5,7 @@ import Image from "next/image";
 import ProductLikeBox from "../../../components/ProductLikeBox";
 import { notFound } from "next/navigation";
 import data from "../../../public/data.json";
+import QuantityAddToCart from "../../../components/QuantityAddToCart";
 
 const page = async ({
   params,
@@ -65,16 +66,7 @@ const page = async ({
               $ {product.price}
             </p>
             <div className="flex gap-4">
-              <div className="bg-grey-light tracking-1 flex h-12 w-fit items-center text-xs leading-18 font-bold">
-                <button className="text-black-25 hover:text-orange h-12 w-10 cursor-pointer">
-                  -
-                </button>
-                <p className="w-10 text-center">1</p>
-                <button className="text-black-25 hover:text-orange h-12 w-10 cursor-pointer">
-                  +
-                </button>
-              </div>
-              <button className="button-primary--orange">Add to Cart</button>
+              <QuantityAddToCart />
             </div>
           </div>
         </div>
