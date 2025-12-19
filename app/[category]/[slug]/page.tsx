@@ -64,7 +64,18 @@ const page = async ({
             <p className="tracking-1-29 mb-[31px] text-lg leading-25 font-bold lg:mb-[47px]">
               $ {product.price}
             </p>
-            <button className="button-primary--orange">Add to Cart</button>
+            <div className="flex gap-4">
+              <div className="bg-grey-light tracking-1 flex h-12 w-fit items-center text-xs leading-18 font-bold">
+                <button className="text-black-25 hover:text-orange h-12 w-10 cursor-pointer">
+                  -
+                </button>
+                <p className="w-10 text-center">1</p>
+                <button className="text-black-25 hover:text-orange h-12 w-10 cursor-pointer">
+                  +
+                </button>
+              </div>
+              <button className="button-primary--orange">Add to Cart</button>
+            </div>
           </div>
         </div>
         <div className="mb-[88px] flex flex-col gap-[88px] md:mb-[120px] md:gap-[120px] lg:mb-[160px] lg:flex-row lg:gap-[125px]">
