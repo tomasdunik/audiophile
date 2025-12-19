@@ -2,16 +2,41 @@
 
 import Image from "next/image";
 import { useCart } from "./CartContext";
+import { useEffect, useRef } from "react";
 
-const BasketPopUp = () => {
+interface BasketPopUpProps {
+  onClose: () => void;
+}
+
+const BasketPopUp = ({ onClose }: BasketPopUpProps) => {
   const { items, setQuantity, clear } = useCart();
+  const popupRef = useRef<HTMLDivElement>(null);
 
   const totalCount = items.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = items.reduce((s, i) => s + i.quantity * i.price, 0);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
   if (items.length === 0) {
     return (
-      <aside className="absolute top-full right-0 mt-6 mr-6 rounded-lg bg-white md:mt-6 md:mr-10 lg:mt-8 lg:mr-0">
+      <aside
+        ref={popupRef}
+        className="absolute top-full right-0 mt-6 mr-6 rounded-lg bg-white md:mt-6 md:mr-10 lg:mt-8 lg:mr-0"
+      >
         <p className="tracking-1-29 px-7 py-8 text-lg leading-25 font-bold uppercase md:px-8">
           Cart is empty
         </p>
@@ -20,7 +45,11 @@ const BasketPopUp = () => {
   }
 
   return (
-    <aside className="absolute top-full right-6 left-6 mt-6 rounded-lg bg-white px-6 pb-8 md:right-0 md:left-auto md:mt-6 md:mr-10 md:min-w-[377px] lg:mt-8 lg:mr-0">
+    <aside
+      ref={popupRef}
+      className="absolute top-full right-6 left-6 mt-6 rounded-lg bg-white px-6 pb-8 md:right-0 md:left-auto md:mt-6 md:mr-10 md:min-w-[377px] lg:mt-8 lg:mr-0"
+    >
+      {/* ...existing code... */}
       <div className="flex justify-between py-8">
         <p className="tracking-1-29 text-lg leading-25 font-bold uppercase">
           Cart ({totalCount})
