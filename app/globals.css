@@ -3,6 +3,7 @@
 @theme {
   --color-black: #000000;
   --color-black-25: #00000040;
+  --color-black-40: #00000066;
   --color-black-50: #00000080;
   --color-black-soft: #101010;
   --color-black-hover: #4c4c4c;
@@ -37,8 +38,11 @@
   --tracking-10: 0.625rem;
   --tracking-8-57: 0.5356rem;
   --tracking-1: 0.0625rem;
+  --tracking-0-93: 0.0581rem;
   --tracking-0-86: 0.0537rem;
   --tracking-1-71: 0.1069rem;
+  --tracking--0-21: -0.0131rem;
+  --tracking--0-25: -0.0156rem;
 
   --leading-58: 3.625rem;
   --leading-56: 3.5rem;

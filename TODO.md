@@ -42,3 +42,4 @@ pridat prechod pri zobrazeni a zatvoreni mobilneho menu
 - title nech sa meni podla stranky prave zobrazenej
 - v checkout iny placeholder pre SK verziu
 - ked niekto vyplni a odosle objednavku, nech t pride na email
+- go back v checkoute nema 56 ale 38 padding top hore na go back button medzi nim a checkout
